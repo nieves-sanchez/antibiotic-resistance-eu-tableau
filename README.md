@@ -250,7 +250,7 @@ Todos los datos utilizados en este proyecto han sido extraídos del **ECDC** (Eu
 
 - **Nieves Sánchez**
   - [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github)](https://github.com/nieves-sanchez)
-  - [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin)](www.linkedin.com/in/nieves-sanchez-data)
+  - [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nieves-sanchez-data)
 
 - **Camila López**
   - [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github)](https://github.com/camilalopezmrt)
