@@ -21,7 +21,7 @@ La resistencia antimicrobiana (RAM) es uno de los mayores desafíos de salud pú
 │   ├── raw/                         # Datos sin procesar
 │   │   ├── acinetobacter-*.csv      # Resistencia de Acinetobacter a diferentes grupos
 │   │   ├── coli-*.csv               # Resistencia de E. coli a diferentes grupos
-│   │   ├── pneumoniae-*.csv         # Resistencia de Streptococcus pneumoniae
+│   │   ├── pneumoniae-*.csv         # Resistencia de Klebsiella pneumoniae a diferentes grupos
 │   │   └── J01*.CSV                 # Consumo de antibióticos por código ATC
 │   │
 │   └── processed/                    # Datos procesados y consolidados
@@ -213,22 +213,21 @@ Los dashboards interactivos en Tableau utilizan principalmente el dataset consol
    - Ranking de países con mayor resistencia
    - Comparación con la media europea
 
-2. **Dashboard de Consumo de Antibióticos**
+2. **Dashboard Análisis Temporal de Resistencia**
+- Tendencias de consumo y resistencia entre 2000 y 2024
+   - Cambios acumulados desde el año inicial
+   - Diferencias estructurales entre países europeos 
+
+3. **Dashboard de Consumo de Antibióticos**
    - Evolución del consumo en DDD por 1.000 habitantes/día
    - Comparativa entre países europeos
    - Identificación de países con mayor y menor consumo
    - Mapa geográfico del consumo de antibióticos
 
-3. **Dashboard de Análisis Temporal**
+4. **Dashboard de Análisis Temporal de Consumo**
    - Tendencias de consumo y resistencia entre 2000 y 2024
    - Cambios acumulados desde el año inicial
    - Diferencias estructurales entre países europeos
-
-4. **Dashboard de Bacterias Analizadas**
-   - Análisis específico de resistencia en:
-     - *Acinetobacter spp.*
-     - *Escherichia coli*
-     - *Klebsiella pneumoniae*
 
 5. **Dashboard de Correlación Consumo–Resistencia**
    - Relación entre consumo de antibióticos y niveles de resistencia
