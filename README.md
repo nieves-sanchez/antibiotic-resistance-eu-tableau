@@ -45,7 +45,7 @@ Los datos de resistencia se organizan por bacterial y grupo de antibiótico:
 
 - **Acinetobacter spp.**: Resistencia a aminoglucósidos, carbapenemes y fluoroquinolonas
 - **E. coli**: Resistencia a aminoglucósidos, carbapenemes, cefalosporinas y fluoroquinolonas
-- **Streptococcus pneumoniae**: Resistencia a aminoglucósidos, carbapenemes, cefalosporinas y fluoroquinolonas
+- **Klebsiella pneumoniae**: Resistencia a aminoglucósidos, carbapenemes, cefalosporinas y fluoroquinolonas
 
 **Formato**: Porcentaje de resistencia (0-100%)
 
@@ -205,22 +205,56 @@ jupyter notebook notebooks/
 
 Los dashboards interactivos en Tableau utilizan principalmente el dataset consolidado (`consumption_resistance_2000_2024_processed.csv`) para explorar:
 
-### Dashboards Esperados
+### Dashboards
 
-1. **Dashboard de Tendencias Globales**: Evolución del consumo y resistencia en la UE (2000-2024)
-2. **Dashboard por País**: Comparativa de consumo vs. resistencia por país
-3. **Dashboard por Bacteria**: Análisis específico de Acinetobacter, E. coli y Streptococcus
-4. **Dashboard por Grupo de Antibióticos**: Patrones de resistencia por tipo de antibiótico
-5. **Correlación Consumo-Resistencia**: Análisis de la relación entre variables
+1. **Dashboard de Resistencia Bacteriana**
+   - Mapa de resistencia por país en la UE
+   - Evolución temporal de la resistencia desde 2000
+   - Ranking de países con mayor resistencia
+   - Comparación con la media europea
 
-## Hallazgos Clave (Ejemplo)
+2. **Dashboard de Consumo de Antibióticos**
+   - Evolución del consumo en DDD por 1.000 habitantes/día
+   - Comparativa entre países europeos
+   - Identificación de países con mayor y menor consumo
+   - Mapa geográfico del consumo de antibióticos
 
-El análisis explora:
+3. **Dashboard de Análisis Temporal**
+   - Tendencias de consumo y resistencia entre 2000 y 2024
+   - Cambios acumulados desde el año inicial
+   - Diferencias estructurales entre países europeos
 
-- **Correlación positiva** entre consumo de antibióticos y resistencia
-- **Variabilidad geográfica** en patrones de resistencia en la UE
-- **Tendencias temporales** de ambos indicadores
-- **Bacterias de mayor preocupación** (ej. Acinetobacter multirresistente)
+4. **Dashboard de Bacterias Analizadas**
+   - Análisis específico de resistencia en:
+     - *Acinetobacter spp.*
+     - *Escherichia coli*
+     - *Klebsiella pneumoniae*
+
+5. **Dashboard de Correlación Consumo–Resistencia**
+   - Relación entre consumo de antibióticos y niveles de resistencia
+   - Modelos de regresión entre variables
+   - Visualización de la asociación para diferentes combinaciones antibiótico–bacteria
+
+## Hallazgos Clave
+
+El análisis identifica varios patrones relevantes en Europa (2000–2024):
+
+- **Correlación positiva moderada** entre el consumo de antibióticos y la resistencia bacteriana  
+  (R² ≈ 0,66–0,67 en algunas combinaciones analizadas).
+
+- **Gradiente geográfico norte–sur**:
+  los países del norte de Europa presentan menores niveles de consumo y resistencia.
+
+- **Mayor resistencia en Europa del sur y este**, especialmente en determinados grupos antibióticos.
+
+- **Incremento sostenido de la resistencia** desde el año 2000 en varios grupos antibióticos.
+
+- **Diferencias estructurales entre países**, con variaciones importantes tanto en consumo como en resistencia.
+
+- **Bacterias de especial preocupación clínica**:
+  - *Acinetobacter spp.* (frecuentemente multirresistente)
+  - *Escherichia coli*
+  - *Klebsiella pneumoniae*
 
 ## Países Incluidos
 
@@ -232,11 +266,11 @@ Ejemplos: Austria, Bélgica, Bulgaria, Croacia, Chipre, Dinamarca, Eslovaquia, E
 
 - **Acinetobacter baumannii/spp.**: Bacteria oportunista multirresistente, frecuente en entornos hospitalarios
 - **Escherichia coli**: Patógeno comunitario e intrahospitalario
-- **Streptococcus pneumoniae**: Causa de neumonía, meningitis e infecciones invasivas
+- **Klebsiella pneumoniae**: Bacteria oportunista asociada principalmente a infecciones hospitalarias como neumonía, bacteriemia e infecciones urinarias
 
 ## Grupos de Antibióticos
 
-- **J01D** - Tetraciclinas
+- **J01D** - Cefalosporinas y otros antibacterianos β-lactámicos  
 - **J01G** - Aminoglucósidos
 - **J01M** - Fluoroquinolonas
 
