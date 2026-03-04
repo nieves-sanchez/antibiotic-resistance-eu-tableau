@@ -19,8 +19,8 @@ La resistencia antimicrobiana (RAM) es uno de los mayores desafíos de salud pú
 ├── README.md                        # Este archivo
 ├── data/
 │   ├── raw/                         # Datos sin procesar
-│   │   ├── acinetobacter-*.csv      # Resistencia de Acinetobacter a diferentes grupos
-│   │   ├── coli-*.csv               # Resistencia de E. coli a diferentes grupos
+│   │   ├── acinetobacter-*.csv      # Resistencia de Acinetobacter spp. a diferentes grupos
+│   │   ├── coli-*.csv               # Resistencia de Escherichia coli a diferentes grupos
 │   │   ├── pneumoniae-*.csv         # Resistencia de Klebsiella pneumoniae a diferentes grupos
 │   │   └── J01*.CSV                 # Consumo de antibióticos por código ATC
 │   │
