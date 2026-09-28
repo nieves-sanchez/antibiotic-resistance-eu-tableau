@@ -4,7 +4,7 @@
 
 Proyecto académico del módulo 4 del **Bootcamp de Data Analytics & IA de Adalab**, en equipo de dos personas.
 
-![Relación consumo–resistencia](assets/05_consumo_resistencia.png)
+![Relación consumo–resistencia](assets/5_Resistencia_vs_Consumo.png)
 
 ---
 
@@ -43,37 +43,37 @@ Capturas del libro `proyecto-conjunto.twbx`. Filtros en «Todo», salvo el país
 
 ### Resistencia por país
 
-![Mapa de resistencia por país](assets/01_resistencia_mapa.png)
+![Mapa de resistencia por país](assets/1_Resistencia.png)
 
 Mapa de la resistencia media de cada país frente a la media del conjunto, con la variación desde el año 2000.
 
 ### Evolución y ranking de resistencia
 
-![Evolución y ranking de resistencia](assets/02_resistencia_evolucion_ranking.png)
+![Evolución y ranking de resistencia](assets/2_Resistencia.png)
 
 Evolución anual del país seleccionado frente a la media y ranking de países por resistencia media.
 
-### Consumo por país
-
-![Mapa de consumo por país](assets/03_consumo_mapa.png)
-
-Consumo medio de cada país en DDD por 1.000 habitantes y día, y su desviación respecto a la media.
-
 ### Evolución y ranking de consumo
 
-![Evolución y ranking de consumo](assets/04_consumo_evolucion_ranking.png)
+![Evolución y ranking de consumo](assets/3_Consumo.png)
 
 Evolución del consumo del país seleccionado frente a la media y ranking de países.
 
+### Consumo por país
+
+![Mapa de consumo por país](assets/4_Consumo.png)
+
+Consumo medio de cada país en DDD por 1.000 habitantes y día, y su desviación respecto a la media.
+
 ### Relación consumo–resistencia
 
-![Consumo frente a resistencia](assets/05_consumo_resistencia.png)
+![Consumo frente a resistencia](assets/5_Resistencia_vs_Consumo.png)
 
 Un punto por país (consumo medio frente a resistencia media de todo el periodo) con su línea de tendencia.
 
 ### Conclusiones
 
-![Conclusiones](assets/06_conclusiones.png)
+![Conclusiones](assets/6_Conclusiones.png)
 
 ---
 
