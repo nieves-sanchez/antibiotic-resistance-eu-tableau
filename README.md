@@ -1,296 +1,140 @@
-# Consumo de Antibióticos y Resistencia Bacteriana en la UE (2000-2024)
+# Consumo de antibióticos y resistencia bacteriana en Europa (2000–2024)
 
-> **Proyecto Académico** | Módulo 4 del Bootcamp Data Analyst & IA de Adalab
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white) ![Tableau](https://img.shields.io/badge/Tableau-E97627?logo=tableau&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
 
-## Descripción del Proyecto
+Proyecto académico del módulo 4 del **Bootcamp de Data Analytics & IA de Adalab**, en equipo de dos personas.
 
-Este proyecto analiza la relación entre el consumo de antibióticos y la resistencia antimicrobiana de bacterias patógenas en los países de la Unión Europea durante el período 2000-2024. El objetivo es identificar patrones, tendencias y correlaciones que permitan entender mejor cómo el uso de antibióticos impacta en el desarrollo de resistencia bacteriana.
+![Relación consumo–resistencia](assets/05_consumo_resistencia.png)
 
-Los resultados del análisis se presentan através de **dashboards interactivos en Tableau** que permiten explorar los datos de manera visual y dinámica.
+---
 
-## Importancia del Tema
+## Resumen del proyecto
 
-La resistencia antimicrobiana (RAM) es uno de los mayores desafíos de salud pública global. El uso excesivo e inapropiado de antibióticos acelera la aparición de bacterias resistentes, lo que dificulta el tratamiento de infecciones y aumenta la mortalidad. Este análisis busca proporcionar insights basados en datos para apoyar políticas públicas de control del uso de antibióticos.
+- **Pregunta:** ¿los países que consumen más antibióticos tienen más bacterias resistentes?
+- **Datos:** ECDC (Centro Europeo para la Prevención y el Control de Enfermedades). Consumo de tres grupos de antibióticos (J01D β-lactámicos, J01G aminoglucósidos, J01M fluoroquinolonas) y resistencia de *E. coli*, *K. pneumoniae* y *Acinetobacter* spp. en 31 países de la UE/EEE y Reino Unido.
+- **Resultado:** en las dos combinaciones analizadas, los países con más consumo medio tienen más resistencia media: R² = 0,67 en *E. coli*–fluoroquinolonas y 0,66 en *K. pneumoniae*–β-lactámicos. La resistencia es menor en el norte de Europa y mayor en el sur y el este.
+- **Limitaciones:** datos agregados por país, así que muestran asociación y no causa; la cobertura de países y bacterias cambia con los años.
 
-## Estructura del Repositorio
+---
 
-``` text
+**📌 Mi contribución en este proyecto**  
+Analicé, limpié y uní los datos de consumo de antibióticos (`notebooks/01_…`), integré consumo y resistencia en un único dataset (`notebooks/03_…`) y diseñé los dashboards de consumo y de relación consumo–resistencia en Tableau. Camila López descargó y preparó los datos de resistencia (`notebooks/02_…`) y diseñó los dashboards de resistencia.
+
+---
+
+## Autoras
+
+**Camila López**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?logo=github&logoColor=white)](https://github.com/camilalopezmrt)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/camila-adriana-lopez-martin)
+
+**Nieves Sánchez**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?logo=github&logoColor=white)](https://github.com/nieves-sanchez)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nieves-sanchez-data)
+[![Email](https://img.shields.io/badge/Email-Escr%C3%ADbeme-EA4335?logo=gmail&logoColor=white)](mailto:nsanchezgarcia86@gmail.com)
+
+---
+
+## Dashboards en Tableau
+
+Capturas del libro `proyecto-conjunto.twbx`. Filtros en «Todo», salvo el país resaltado (Grecia).
+
+### Resistencia por país
+
+![Mapa de resistencia por país](assets/01_resistencia_mapa.png)
+
+Mapa de la resistencia media de cada país frente a la media del conjunto, con la variación desde el año 2000.
+
+### Evolución y ranking de resistencia
+
+![Evolución y ranking de resistencia](assets/02_resistencia_evolucion_ranking.png)
+
+Evolución anual del país seleccionado frente a la media y ranking de países por resistencia media.
+
+### Consumo por país
+
+![Mapa de consumo por país](assets/03_consumo_mapa.png)
+
+Consumo medio de cada país en DDD por 1.000 habitantes y día, y su desviación respecto a la media.
+
+### Evolución y ranking de consumo
+
+![Evolución y ranking de consumo](assets/04_consumo_evolucion_ranking.png)
+
+Evolución del consumo del país seleccionado frente a la media y ranking de países.
+
+### Relación consumo–resistencia
+
+![Consumo frente a resistencia](assets/05_consumo_resistencia.png)
+
+Un punto por país (consumo medio frente a resistencia media de todo el periodo) con su línea de tendencia.
+
+### Conclusiones
+
+![Conclusiones](assets/06_conclusiones.png)
+
+---
+
+## Por qué solo dos combinaciones
+
+No todos los antibióticos se usan contra todas las bacterias. Para la correlación elegimos las dos parejas en las que ese grupo de antibióticos es de uso habitual frente a esa bacteria: fluoroquinolonas con *E. coli* y β-lactámicos con *K. pneumoniae*. En las demás combinaciones la relación es débil o no tiene sentido buscarla.
+
+La pendiente de *K. pneumoniae*–β-lactámicos es de +7,3 puntos de resistencia por cada DDD/1.000 hab./día de consumo.
+
+---
+
+## Hallazgos
+
+- En *E. coli*–fluoroquinolonas y *K. pneumoniae*–β-lactámicos, el consumo medio de cada país explica en torno a dos tercios de la variación de su resistencia media (R² ≈ 0,66–0,67).
+- La resistencia media va del 3,5 % de Finlandia al 45,5 % de Grecia. Los países nórdicos y los Países Bajos están abajo; Grecia, Bulgaria, Rumanía e Italia, arriba.
+- Grecia es el país con más consumo medio (3,63 DDD/1.000 hab./día) y Dinamarca el que menos (0,29).
+
+---
+
+## Cobertura de los datos
+
+| Serie | Años | Nota |
+|---|---|---|
+| Consumo (J01D, J01G, J01M) | 2000–2024 | 14 países con datos en 2000 y 27 en 2024; Liechtenstein sin datos de consumo |
+| *E. coli* | 2000–2024 | |
+| *K. pneumoniae* | 2005–2024 | |
+| *Acinetobacter* spp. | 2012–2024 | |
+
+Como el número de países y de bacterias cambia con los años, las medias anuales y las variaciones desde 2000 comparan grupos distintos de países. Por eso las conclusiones se basan en medias por país y no en la tendencia temporal.
+
+---
+
+## Estructura del repositorio
+
+```text
 .
-├── README.md                        # Este archivo
+├── README.md
+├── proyecto-conjunto.twbx          # libro de Tableau con los dashboards
+├── assets/                         # capturas de los dashboards
 ├── data/
-│   ├── raw/                         # Datos sin procesar
-│   │   ├── acinetobacter-*.csv      # Resistencia de Acinetobacter spp. a diferentes grupos
-│   │   ├── coli-*.csv               # Resistencia de Escherichia coli a diferentes grupos
-│   │   ├── pneumoniae-*.csv         # Resistencia de Klebsiella pneumoniae a diferentes grupos
-│   │   └── J01*.CSV                 # Consumo de antibióticos por código ATC
-│   │
-│   └── processed/                    # Datos procesados y consolidados
-│       ├── antibiotic_consumption_2000_2024_processed.csv
-│       ├── antimicrobial_resistance_2000_2024_processed.csv
-│       └── consumption_resistance_2000_2024_processed.csv
-│
+│   ├── raw/                        # CSV originales del ECDC
+│   └── processed/                  # consumo, resistencia y dataset integrado
 └── notebooks/
     ├── 01_union_eda_limpieza_consumo_antibioticos.ipynb
     ├── 02_union_eda_limpieza_resistencia_bacterias.ipynb
     └── 03_integracion_consumo_resistencia.ipynb
 ```
 
-## Descripción de los Datos
-
-### Datos Crudos (`data/raw/`)
-
-#### Resistencia Bacteriana
-
-Los datos de resistencia se organizan por bacterial y grupo de antibiótico:
-
-- **Acinetobacter spp.**: Resistencia a aminoglucósidos, carbapenemes y fluoroquinolonas
-- **E. coli**: Resistencia a aminoglucósidos, carbapenemes, cefalosporinas y fluoroquinolonas
-- **Klebsiella pneumoniae**: Resistencia a aminoglucósidos, carbapenemes, cefalosporinas y fluoroquinolonas
-
-**Formato**: Porcentaje de resistencia (0-100%)
-
-#### Consumo de Antibióticos
-
-Los datos de consumo se organizan por código ATC (Anatomical Therapeutic Chemical Classification System):
-
-- **J01D**: Consumo de β-lactámicos
-- **J01G**: Consumo de aminoglucósidos
-- **J01M**: Consumo de fluoroquinolonas
-
-**Formato**: DDD (Dosis Diaria Definida) por 1000 habitantes por día
-
-### Datos Procesados (`data/processed/`)
-
-#### `antibiotic_consumption_2000_2024_processed.csv`
-
-| Campo | Descripción |
-|-------|-------------|
-| `year` | Año (2000-2024) |
-| `country` | País de la UE |
-| `antibiotic_group` | Código ATC del grupo de antibióticos (J01D, J01G, J01M) |
-| `ddd_per_1000_inhabitants_per_day` | Consumo en DDD por 1000 habitantes/día |
-
-#### `antimicrobial_resistance_2000_2024_processed.csv`
-
-| Campo | Descripción |
-|-------|-------------|
-| `year` | Año |
-| `country` | País de la UE |
-| `bacteria` | Bacteria analizada |
-| `antibiotic_group` | Grupo de antibióticos |
-| `resistance` | Porcentaje de resistencia (%) |
-
-#### `consumption_resistance_2000_2024_processed.csv`
-
-Dataset consolidado que combina consumo y resistencia en una única tabla:
-
-| Campo | Descripción |
-|-------|-------------|
-| `Country` | País de la UE |
-| `Year` | Año (2000-2024) |
-| `Bacteria` | Bacteria analizada |
-| `Antibiotic group` | Grupo de antibióticos |
-| `Resistance` | Porcentaje de resistencia (%) |
-| `Consumption` | Consumo en DDD por 1000 habitantes/día |
-
-## Notebooks de Análisis
-
-### 1. `01_union_eda_limpieza_consumo_antibioticos.ipynb`
-
-**Objetivo**: Limpiar, unificar y analizar exploratorio de datos de consumo de antibióticos
-
-**Tareas principales**:
-
-- Carga de archivos J01B, J01G, J01M
-- Análisis exploratorio (EDA) del consumo
-- Limpieza de valores faltantes
-- Estandarización de nombres de países
-- Generación de estadísticas descriptivas
-
-**Salida**: `antibiotic_consumption_2000_2024_processed.csv`
-
 ---
 
-### 2. `02_union_eda_limpieza_resistencia_bacterias.ipynb`
-
-**Objetivo**: Procesar y analizar los datos de resistencia antimicrobiana
-
-**Tareas principales**:
-
-- Carga de archivos de resistencia (Acinetobacter, E. coli, Streptococcus)
-- Análisis exploratorio de patrones de resistencia
-- Limpieza de datos inconsistentes
-- Normalización de nombres de bacterias y grupos de antibióticos
-- Cálculo de estadísticas por país y bacteria
-
-**Salida**: `antimicrobial_resistance_2000_2024_processed.csv`
-
----
-
-### 3. `03_integracion_consumo_resistencia.ipynb`
-
-**Objetivo**: Integrar ambos datasets y crear análisis correlacional
-
-**Tareas principales**:
-
-- Fusión de consumo y resistencia
-- Análisis correlacional entre variables
-- Cálculo de tendencias temporales
-- Identificación de outliers
-- Preparación de datos para visualización en Tableau
-
-**Salida**: `consumption_resistance_2000_2024_processed.csv`
-
-## Configuración del Entorno
-
-### Requisitos
-
-- Python 3.8 o superior
-- pip (gestor de paquetes de Python)
-- Jupyter Notebook
-
-### Instalación
-
-1. **Clonar el repositorio:**
-
-    ```bash
-    git clone <url-del-repositorio>
-    cd da-promo-64-modulo-4-proyecto-tableau
-    ```
-
-2. **Crear un entorno virtual (recomendado):**
-
-    ```bash
-    python -m venv venv
-    ```
-
-3. **Activar el entorno virtual:**
-
-    **En Windows:**
-
-    ```bash
-    venv\Scripts\activate
-    ```
-
-    **En macOS/Linux:**
-
-    ```bash
-    source venv/bin/activate
-    ```
-
-4. **Instalar las dependencias:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-### Cómo Usar este Repositorio
-
-1. **Ejecutar notebooks en orden:**
-   - `01_union_eda_limpieza_consumo_antibioticos.ipynb`
-   - `02_union_eda_limpieza_resistencia_bacterias.ipynb`
-   - `03_integracion_consumo_resistencia.ipynb`
-
-2. **Verificar salidas procesadas** en la carpeta `data/processed/`
-
-3. **Importar a Tableau** los archivos CSV procesados para crear dashboards
-
-### Ejecutar los Notebooks
+## Cómo reproducirlo
 
 ```bash
+git clone https://github.com/nieves-sanchez/antibiotic-resistance-eu-tableau.git
+cd antibiotic-resistance-eu-tableau
+pip install -r requirements.txt
 jupyter notebook notebooks/
 ```
 
-## Visualizaciones en Tableau
-
-Los dashboards interactivos en Tableau utilizan principalmente el dataset consolidado (`consumption_resistance_2000_2024_processed.csv`) para explorar:
-
-### Dashboards
-
-1. **Dashboard de Resistencia Bacteriana**
-   - Mapa de resistencia por país en la UE
-   - Evolución temporal de la resistencia desde 2000
-   - Ranking de países con mayor resistencia
-   - Comparación con la media europea
-
-2. **Dashboard Análisis Temporal de Resistencia**
-- Tendencias de consumo y resistencia entre 2000 y 2024
-   - Cambios acumulados desde el año inicial
-   - Diferencias estructurales entre países europeos 
-
-3. **Dashboard de Consumo de Antibióticos**
-   - Evolución del consumo en DDD por 1.000 habitantes/día
-   - Comparativa entre países europeos
-   - Identificación de países con mayor y menor consumo
-   - Mapa geográfico del consumo de antibióticos
-
-4. **Dashboard de Análisis Temporal de Consumo**
-   - Tendencias de consumo y resistencia entre 2000 y 2024
-   - Cambios acumulados desde el año inicial
-   - Diferencias estructurales entre países europeos
-
-5. **Dashboard de Correlación Consumo–Resistencia**
-   - Relación entre consumo de antibióticos y niveles de resistencia
-   - Modelos de regresión entre variables
-   - Visualización de la asociación para diferentes combinaciones antibiótico–bacteria
-
-## Hallazgos Clave
-
-El análisis identifica varios patrones relevantes en Europa (2000–2024):
-
-- **Correlación positiva moderada** entre el consumo de antibióticos y la resistencia bacteriana  
-  (R² ≈ 0,66–0,67 en algunas combinaciones analizadas).
-
-- **Gradiente geográfico norte–sur**:
-  los países del norte de Europa presentan menores niveles de consumo y resistencia.
-
-- **Mayor resistencia en Europa del sur y este**, especialmente en determinados grupos antibióticos.
-
-- **Incremento sostenido de la resistencia** desde el año 2000 en varios grupos antibióticos.
-
-- **Diferencias estructurales entre países**, con variaciones importantes tanto en consumo como en resistencia.
-
-- **Bacterias de especial preocupación clínica**:
-  - *Acinetobacter spp.* (frecuentemente multirresistente)
-  - *Escherichia coli*
-  - *Klebsiella pneumoniae*
-
-## Países Incluidos
-
-Se analizan **27 países de la UE** más algunos países asociados como Islandia, Noruega, etc.
-
-Ejemplos: Austria, Bélgica, Bulgaria, Croacia, Chipre, Dinamarca, Eslovaquia, Eslovenia, España, Estonia, Finlandia, Francia, Alemania, Grecia, Hungría, Irlanda, Italia, Letonia, Lituania, Luxemburgo, Malta, Países Bajos, Polonia, Portugal, República Checa, Rumania, Suecia, Reino Unido (datos hasta 2019).
-
-## Bacterias Analizadas
-
-- **Acinetobacter baumannii/spp.**: Bacteria oportunista multirresistente, frecuente en entornos hospitalarios
-- **Escherichia coli**: Patógeno comunitario e intrahospitalario
-- **Klebsiella pneumoniae**: Bacteria oportunista asociada principalmente a infecciones hospitalarias como neumonía, bacteriemia e infecciones urinarias
-
-## Grupos de Antibióticos
-
-- **J01D** - Cefalosporinas y otros antibacterianos β-lactámicos  
-- **J01G** - Aminoglucósidos
-- **J01M** - Fluoroquinolonas
-
-## Fuente de Datos
-
-Todos los datos utilizados en este proyecto han sido extraídos del **ECDC** (European Centre for Disease Prevention and Control), la agencia de la Unión Europea especializada en vigilancia de enfermedades infecciosas. Para más información, visite [ecdc.europa.eu](https://www.ecdc.europa.eu/).
-
-## Autores
-
-**Realizado por:**
-
-- **Nieves Sánchez**
-  - [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github)](https://github.com/nieves-sanchez)
-  - [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nieves-sanchez-data)
-
-- **Camila López**
-  - [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github)](https://github.com/camilalopezmrt)
-  - [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/camila-adriana-lopez-martin)
+Ejecuta los notebooks en orden (01 → 02 → 03). El libro `proyecto-conjunto.twbx` se abre con Tableau Desktop o Tableau Reader.
 
 ---
 
-Proyecto académico realizado como parte del **Módulo 4** del Bootcamp **Data Analyst & IA** de Adalab
-
-**Última actualización**: Febrero 2026
+Fuente de datos: [ECDC](https://www.ecdc.europa.eu/) · Proyecto con fines educativos, parte del Bootcamp de Data Analytics & IA de Adalab.
